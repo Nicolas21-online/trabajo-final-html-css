@@ -726,14 +726,23 @@ textarea:focus-visible {
     border: 1px solid #777b80;
     border-radius: 50%;
     color: var(--text-light);
-    font-size: 15px;
     text-decoration: none;
-    transition: color .2s ease, background-color .2s ease;
+    transition: background-color .2s ease;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: filter .2s ease;
 }
 
 .social-icons a:hover {
-    color: var(--bg-dark);
     background: var(--accent-gold);
+}
+
+.social-icons a:hover img {
+    filter: brightness(0);
 }
 
 .footer-copyright {
