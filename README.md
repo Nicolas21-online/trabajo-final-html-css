@@ -17,7 +17,7 @@ Sitio web oficial desarrollado como Trabajo Final del módulo de **HTML5 y CSS3*
 El proyecto respeta estrictamente la arquitectura de carpetas y rutas relativas solicitada en el enunciado:
 
 ```text
-examen-html/
+trabajo-final-html-css/
 ├── favicon.ico
 ├── README.md
 ├── index.html
@@ -25,9 +25,11 @@ examen-html/
 │   └── estilos.css
 ├── views/
 │   ├── contacto.html
+│   ├── equipos.html
+│   ├── Inscripcion.html
 │   ├── galeria.html
-│   └── presupuesto.html
 └── assets/
+    ├── favicon/
     └── img/
         └── [imágenes y recursos del proyecto]
 ```[cite: 19, 20]
@@ -38,7 +40,8 @@ examen-html/
 
 * **Inicio (`index.html`):** Página principal del sitio web con estructura semántica (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) y apartados diferenciados que presentan la identidad y finalidad del proyecto.
 * **Galería (`views/galeria.html`):** Cuadrícula homogénea compuesta por 12 imágenes con dimensiones originales declaradas en HTML (`width` y `height`) y redimensionamiento visual gestionado íntegramente mediante CSS.
-* **Presupuesto (`views/presupuesto.html`):** Formulario interactivo accesible con validaciones nativas en HTML5 para Nombre (3 a 20 caracteres), Teléfono (9 dígitos), Email, campo adicional multilínea, aceptación obligatoria de Política de Privacidad y botones de Enviar y Limpiar.
+* **Inscripción (`views/Inscripcion.html`):** Formulario para solicitar la inscripción, con datos de contacto, un campo opcional para más información y aceptación de la política de privacidad.
+* **Equipos (`views/equipos.html`):** Presentación de las categorías del club, desde Benjamín hasta Juvenil, con información sobre cada etapa.
 * **Contacto (`views/contacto.html`):** Información detallada con la ubicación física de la entidad e imagen estática del mapa de localización.[cite: 17, 18, 20, 21]
 
 ---
