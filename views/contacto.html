@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Caciques F.C.</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header" id="top">
+        <div class="logo">
+            <img src="../assets/img/logo.webp" alt="Escudo de Caciques F.C." class="site-logo">
+            <span>Caciques F.C.</span>
+        </div>
+        
+        <!-- aria-current ayuda a identificar la página activa en la navegación. -->
+        <nav class="site-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="equipos.html">Equipos</a></li>
+                <li><a class="nav-join" href="Inscripcion.html">Inscripción</a></li>
+                <li><a href="contacto.html" class="activo" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="seccion-contacto" aria-labelledby="contact-heading">
+            <header class="page-heading">
+                <p class="section-label">Estamos para ayudarte</p>
+                <h1 id="contact-heading">Ubicación e instalaciones</h1>
+                <p>Ven a visitarnos a nuestras instalaciones principales o ponte en contacto con nuestra secretaría deportiva para cualquier duda.</p>
+            </header>
+            
+            <!-- La dirección escrita complementa el mapa para que la ubicación no dependa de la imagen. -->
+            <div class="contact-layout">
+                <section class="info-ubicacion" aria-labelledby="address-heading">
+                    <h2 id="address-heading">Dirección de la escuela</h2>
+                    <p><strong>Campo Municipal de Fútbol Caciques F.C.</strong></p>
+                    <p>Avenida del Deporte, s/n</p>
+                    <p>46000 - Ciudad Deportiva</p>
+                    <p>Teléfono de secretaría: +34 900 123 456</p>
+                    <p>Correo electrónico: contacto@caciquesfc.es</p>
+                </section>
+
+                <!-- Es una imagen estática, no un mapa interactivo. -->
+                <figure class="contenedor-mapa">
+                    <figcaption class="sr-only">Mapa de localización</figcaption>
+                    <img src="../assets/img/Mapa.png" alt="Mapa estático de la ubicación del campo de fútbol de Caciques F.C." width="800" height="721">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <a class="volver-arriba" href="#top" aria-label="Volver arriba">
+        <span aria-hidden="true">↑</span>
+        <span>Volver arriba</span>
+    </a>
+
+    <!-- El pie compartido mantiene accesibles los datos del club y sus redes sociales. -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-brand">
+                    <img src="../assets/img/logo.webp" alt="">
+                    <span>Caciques F.C.</span>
+                </div>
+                <p>Formación, compañerismo y pasión por el fútbol.</p>
+            </div>
+            <div>
+                <h2>Contacto</h2>
+                <div class="footer-links">
+                    <a href="mailto:contacto@caciquesfc.es"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contacto@caciquesfc.es</a>
+                    <a href="tel:+34900123456"><i class="fa-solid fa-phone" aria-hidden="true"></i> +34 900 123 456</a>
+                </div>
+            </div>
+            <div>
+                <h2>Síguenos</h2>
+                <p>Las novedades del club, dentro y fuera del campo.</p>
+                <nav class="social-icons" aria-label="Redes sociales">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Caciques F.C."><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Caciques F.C."><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Caciques F.C."><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Caciques F.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

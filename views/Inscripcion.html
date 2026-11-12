@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inscripciones - Caciques F.C.</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+<body>
+   
+    <!-- El menú se comparte entre páginas y aria-current identifica la sección abierta. -->
+    <header class="site-header" id="top">
+        <div class="logo">
+            <img src="../assets/img/logo.webp" alt="Escudo de Caciques F.C." class="site-logo">
+            <span>Caciques F.C.</span>
+        </div>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="equipos.html">Equipos</a></li>
+                <li><a class="nav-join activo" href="Inscripcion.html" aria-current="page">Inscripción</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-content">
+        <section class="seccion-formulario" aria-labelledby="signup-heading">
+            <p class="section-label">Da el siguiente paso</p>
+            <h1 id="signup-heading">Solicitud de inscripción</h1>
+            <p>Completa el siguiente formulario para solicitar información detallada sobre las cuotas de la temporada o inscribir a tu hijo/a en Caciques F.C.</p>
+
+            <!-- Los campos required, type y pattern activan validación del navegador. -->
+            <!-- Cada label se asocia a su campo por id; required y pattern validan antes del envío. -->
+            <form action="#" method="post" class="formulario-presupuesto">
+                
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required 
+                           pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,20}" 
+                           placeholder="Ej. Juan Pérez" 
+                           title="Introduce entre 3 y 20 letras (sin números ni símbolos especiales)">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="telefono">Teléfono de contacto *</label>
+                    <input type="tel" id="telefono" name="telefono" required 
+                           pattern="[0-9]{9}" 
+                           placeholder="Ej. 612345678" 
+                           title="Introduce exactamente 9 dígitos numéricos">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="email">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="nombre@correo.es" 
+                           title="Introduce una dirección de correo válida (ejemplo: nombre@correo.es)">
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="informacion">Más información (Opcional)</label>
+                    <textarea id="informacion" name="informacion" rows="5" 
+                              placeholder="Indícanos la edad del jugador o cualquier consulta adicional..." 
+                              title="Campo de texto libre para aportar datos adicionales"></textarea>
+                </div>
+
+                <!-- La casilla es obligatoria para que el navegador permita enviar el formulario. -->
+                <div class="grupo-campo campo-checkbox">
+                    <input type="checkbox" id="privacidad" name="privacidad" required 
+                           title="Debes aceptar la política de privacidad para enviar la solicitud">
+                    <label for="privacidad">He leído y acepto la política de privacidad *</label>
+                </div>
+
+                <div class="grupo-botones">
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                    <button type="reset" class="btn-limpiar">Limpiar</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <a class="volver-arriba" href="#top" aria-label="Volver arriba">
+        <span aria-hidden="true">↑</span>
+        <span>Volver arriba</span>
+    </a>
+
+    <!-- El pie compartido ofrece los datos de contacto y enlaces sociales desde cada página. -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-brand">
+                    <img src="../assets/img/logo.webp" alt="">
+                    <span>Caciques F.C.</span>
+                </div>
+                <p>Formación, compañerismo y pasión por el fútbol.</p>
+            </div>
+            <div>
+                <h2>Contacto</h2>
+                <div class="footer-links">
+                    <a href="mailto:contacto@caciquesfc.es"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contacto@caciquesfc.es</a>
+                    <a href="tel:+34900123456"><i class="fa-solid fa-phone" aria-hidden="true"></i> +34 900 123 456</a>
+                </div>
+            </div>
+            <div>
+                <h2>Síguenos</h2>
+                <p>Las novedades del club, dentro y fuera del campo.</p>
+                <nav class="social-icons" aria-label="Redes sociales">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Caciques F.C."><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Caciques F.C."><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Caciques F.C."><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Caciques F.C. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

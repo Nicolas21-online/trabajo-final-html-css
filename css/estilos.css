@@ -1,0 +1,899 @@
+/* Paleta y sombra reutilizadas en todo el sitio; ajustar estos valores cambia el tema completo. */
+:root {
+    --primary-red: #850b12;
+    --primary-red-accent: #a5141c;
+    --accent-gold: #f0cd68;
+    --bg-dark: #17191c;
+    --text-dark: #1d2024;
+    --text-light: #ffffff;
+    --text-muted: #4b5158;
+    --bg-light: #f5f4f1;
+    --surface-light: #ffffff;
+    --border-color: #e8e5df;
+    --shadow-card: 0 10px 28px rgba(29, 32, 36, .08);
+}
+
+/* Incluye bordes y rellenos en el ancho calculado para evitar desbordamientos. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* El layout flex mantiene el pie abajo incluso cuando una página tiene poco contenido. */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* MAIN: ocupa el espacio disponible entre la cabecera y el pie de página. */
+main {
+    flex: 1;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.2;
+}
+
+/* Las imágenes nunca superan el ancho del contenedor que las contiene. */
+img {
+    max-width: 100%;
+}
+
+/* Oculta una etiqueta solo visualmente; lectores de pantalla aún pueden anunciarla. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+/* Hace visible el foco al recorrer enlaces y controles con el teclado. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary-red);
+    outline-offset: 3px;
+}
+
+/* HEADER: identidad y navegación compartidas; aria-current señala la página activa. */
+.site-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 78px;
+    padding: 12px clamp(18px, 5vw, 76px);
+    color: var(--text-light);
+    background: var(--bg-dark);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .14);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: .035em;
+    white-space: nowrap;
+}
+
+.site-logo {
+    display: block;
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+/* El menú usa una lista horizontal en escritorio y se reorganiza en los breakpoints inferiores. */
+.site-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 9px 12px;
+    border-radius: 4px;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.site-nav a:hover {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, .1);
+}
+
+.site-nav a.activo {
+    color: #f4d57d;
+    background: rgba(255, 255, 255, .09);
+}
+
+.site-nav a.nav-join {
+    color: var(--text-light);
+    background: var(--primary-red);
+}
+
+.site-nav a.nav-join:hover {
+    background: var(--primary-red-accent);
+}
+
+.site-nav a.nav-join.activo {
+    box-shadow: inset 0 -3px var(--accent-gold);
+}
+
+.site-nav a:focus-visible,
+.footer-contact a:focus-visible,
+.social-icons a:focus-visible,
+.volver-arriba:focus-visible {
+    outline-color: var(--accent-gold);
+}
+
+/* SECCIONES DEL INICIO: hero, destacados, historia, categorías, metodología y valores. */
+/* La primera capa oscurece la fotografía; la segunda carga la imagen y recorta sin deformarla. */
+.hero {
+    display: flex;
+    min-height: 550px;
+    align-items: center;
+    padding: 70px clamp(24px, 10vw, 145px);
+    border-bottom: 5px solid var(--accent-gold);
+    color: var(--text-light);
+    background:
+        linear-gradient(90deg, rgba(12, 14, 16, .97) 0%, rgba(12, 14, 16, .82) 52%, rgba(12, 14, 16, .22) 100%),
+        url("../assets/img/Equipo-completo.webp") center 42% / cover;
+}
+
+.hero-copy {
+    max-width: 630px;
+}
+
+.hero .eyebrow,
+.page-heading .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    color: var(--accent-gold);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow::before {
+    width: 27px;
+    height: 2px;
+    background: var(--accent-gold);
+    content: "";
+}
+
+.hero h1 {
+    max-width: 620px;
+    margin: 0;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 800;
+    letter-spacing: -.055em;
+}
+
+.hero-copy > p:not(.eyebrow) {
+    max-width: 500px;
+    margin: 21px 0 29px;
+    color: #f0f0f0;
+    font-size: 18px;
+}
+
+/* Los enlaces de acción comparten altura, contraste y respuesta al pasar el puntero. */
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.button,
+.btn-categorias,
+.grupo-botones button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    color: var(--text-light);
+    background: var(--primary-red);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.button:hover,
+.btn-categorias:hover,
+.grupo-botones button:hover {
+    transform: translateY(-2px);
+    background: var(--primary-red-accent);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+}
+
+.button.secondary {
+    border-color: var(--accent-gold);
+    background: rgba(15, 17, 18, .55);
+}
+
+.button.secondary:hover {
+    background: rgba(15, 17, 18, .85);
+}
+
+/* Tres datos breves destacan la información principal sin añadir texto nuevo. */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: min(1000px, calc(100% - 32px));
+    margin: -1px auto 0;
+    padding: 24px 18px;
+    background: var(--surface-light);
+    box-shadow: var(--shadow-card);
+}
+
+.highlight {
+    padding: 3px 20px;
+    text-align: center;
+}
+
+.highlight + .highlight {
+    border-left: 1px solid var(--border-color);
+}
+
+.highlight strong {
+    display: block;
+    color: var(--primary-red);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.highlight span {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Inicio: ancho de lectura común para historia, foto, categorías, metodología y valores. */
+.home-section,
+.home-intro,
+.values-section {
+    width: min(1050px, calc(100% - 44px));
+    margin: 0 auto;
+    padding: 72px 0;
+}
+
+.home-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 56px;
+}
+
+.section-label {
+    margin: 0 0 12px;
+    color: var(--primary-red);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.history-copy h2,
+.home-section h2,
+.values-heading h2 {
+    margin: 0 0 14px;
+    font-size: clamp(27px, 3.5vw, 39px);
+    font-weight: 800;
+    letter-spacing: -.04em;
+}
+
+.history-copy > p + p {
+    margin-top: 12px;
+}
+
+.history-photo {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background: var(--surface-light);
+    box-shadow: var(--shadow-card);
+}
+
+.history-photo img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.history-photo figcaption {
+    padding: 11px 15px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.home-section {
+    margin-bottom: 20px;
+    padding: 34px;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background: var(--surface-light);
+    box-shadow: var(--shadow-card);
+}
+
+.home-section p {
+    color: var(--text-muted);
+}
+
+.home-section .btn-categorias {
+    margin-top: 8px;
+}
+
+/* Las cinco tarjetas se distribuyen en columnas y pasan a dos/una columna en móvil. */
+.values-section {
+    padding-top: 5px;
+    padding-bottom: 76px;
+}
+
+.values-heading {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.values-heading h2 {
+    margin-bottom: 12px;
+}
+
+.values-heading > p:last-child {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.valor-item {
+    min-height: 118px;
+    padding: 17px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--primary-red);
+    border-radius: 5px;
+    background: var(--surface-light);
+}
+
+.valor-item strong {
+    color: var(--primary-red);
+}
+
+/* SECCIONES DE PÁGINAS INTERIORES: ancho y espaciado común para galería, equipos, inscripción y contacto. */
+/* Los títulos de las páginas interiores comparten jerarquía y espaciado. */
+.page-content {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 58px 24px 70px;
+}
+
+.page-heading {
+    max-width: 730px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.page-heading h1 {
+    margin: 0 0 14px;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    letter-spacing: -.04em;
+}
+
+.page-heading > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--text-muted);
+}
+
+/* Las fotos y sus pies forman una sola tarjeta; object-fit evita deformar las imágenes. */
+.grid-galeria,
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.item-galeria {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background: var(--surface-light);
+    box-shadow: 0 7px 20px rgba(29, 32, 36, .06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.item-galeria:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+}
+
+.item-galeria img,
+.imagen-categoria {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.item-galeria figcaption {
+    flex: 1;
+    padding: 14px 16px 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.item-equipo figcaption h3 {
+    margin: 0 0 6px;
+    color: var(--primary-red);
+    font-size: 18px;
+}
+
+.item-equipo figcaption p {
+    margin: 0;
+}
+
+/* SECCIÓN DE INSCRIPCIÓN: controles grandes, etiquetas visibles y foco de teclado marcado. */
+.seccion-formulario {
+    width: min(680px, 100%);
+    margin: 0 auto;
+    padding: clamp(22px, 5vw, 42px);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--accent-gold);
+    border-radius: 7px;
+    background: var(--surface-light);
+    box-shadow: var(--shadow-card);
+}
+
+.seccion-formulario h1 {
+    margin: 0 0 8px;
+    font-size: clamp(27px, 3.5vw, 36px);
+}
+
+.seccion-formulario > p {
+    margin: 0 0 23px;
+    color: var(--text-muted);
+}
+
+.seccion-formulario > .section-label {
+    margin-bottom: 8px;
+    color: var(--primary-red);
+}
+
+.grupo-campo {
+    margin-bottom: 18px;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo input[type="tel"],
+.grupo-campo input[type="email"],
+.grupo-campo textarea {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid #b8bbc0;
+    border-radius: 4px;
+    background: #fcfcfb;
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 16px;
+}
+
+.grupo-campo input::placeholder,
+.grupo-campo textarea::placeholder {
+    color: #4b5158;
+    opacity: 1;
+}
+
+.grupo-campo textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.grupo-campo input:focus-visible,
+.grupo-campo textarea:focus-visible {
+    border-color: var(--primary-red);
+}
+
+/* El borde verde aparece solo cuando se ha escrito un valor y la validación nativa es correcta. */
+.grupo-campo input:not(:placeholder-shown):valid,
+.grupo-campo textarea:not(:placeholder-shown):valid {
+    border-color: #176b32;
+    background: #f0fff4;
+}
+
+.campo-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.campo-checkbox input {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: var(--primary-red);
+}
+
+.campo-checkbox label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.grupo-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.grupo-botones .btn-limpiar {
+    border-color: #8c6b14;
+    color: var(--text-dark);
+    background: var(--accent-gold);
+}
+
+.grupo-botones .btn-limpiar:hover {
+    background: #f5d983;
+}
+
+/* SECCIÓN DE CONTACTO: dirección e imagen del mapa se apilan en pantallas pequeñas. */
+.seccion-contacto {
+    width: min(1050px, 100%);
+    margin: 0 auto;
+}
+
+.seccion-contacto > .page-heading {
+    margin-bottom: 34px;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.info-ubicacion,
+.contenedor-mapa {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background: var(--surface-light);
+    box-shadow: 0 7px 22px rgba(29, 32, 36, .06);
+}
+
+.info-ubicacion {
+    padding: 27px;
+}
+
+.info-ubicacion h2,
+.contenedor-mapa h2 {
+    margin: 0 0 15px;
+    font-size: 22px;
+}
+
+.info-ubicacion p {
+    margin: 8px 0;
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+.info-ubicacion strong {
+    color: var(--text-dark);
+}
+
+.contenedor-mapa img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    object-fit: cover;
+}
+
+/* FOOTER: datos del club y redes sociales en tres columnas, adaptables a móvil. */
+.site-footer {
+    margin-top: auto;
+    border-top: 4px solid var(--accent-gold);
+    color: var(--text-light);
+    background: var(--bg-dark);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 36px;
+    width: min(1050px, calc(100% - 44px));
+    margin: 0 auto;
+    padding: 38px 0 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-weight: 800;
+}
+
+.footer-brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-main h2 {
+    margin: 0 0 10px;
+    color: var(--accent-gold);
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.footer-main p {
+    margin: 10px 0 0;
+    color: #d5d7d9;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: grid;
+    gap: 7px;
+}
+
+.footer-links a {
+    width: fit-content;
+    color: #f0f0f0;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 9px;
+    margin-top: 12px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #777b80;
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 15px;
+    text-decoration: none;
+    transition: color .2s ease, background-color .2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--bg-dark);
+    background: var(--accent-gold);
+}
+
+.footer-copyright {
+    margin: 0;
+    padding: 13px 20px;
+    border-top: 1px solid #484b4f;
+    color: #d5d7d9;
+    font-size: 13px;
+    text-align: center;
+}
+
+.volver-arriba {
+    /* Se mantiene disponible mientras se recorre el contenido largo de la página. */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    padding: 10px 15px;
+    border: 2px solid var(--accent-gold);
+    border-radius: 999px;
+    color: var(--text-light);
+    background: var(--primary-red);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(18, 18, 18, .25);
+}
+
+.volver-arriba:hover {
+    background: var(--primary-red-accent);
+}
+
+/* A 800 px se apilan cabecera y mapa y se reducen las cuadrículas a dos columnas. */
+@media (max-width: 800px) {
+    .site-header {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .site-nav {
+        width: 100%;
+    }
+
+    .site-nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .home-intro,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 27px;
+    }
+
+    .history-photo img {
+        height: 290px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-galeria,
+    .grid-categorias {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .footer-main > :first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* En móviles estrechos se usa una columna y se compactan márgenes y controles. */
+@media (max-width: 520px) {
+    .hero {
+        min-height: 480px;
+        padding: 48px 22px;
+        background-position: 58% center;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+    .highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .highlight + .highlight {
+        padding-top: 12px;
+        border-top: 1px solid var(--border-color);
+        border-left: 0;
+    }
+
+    .home-section,
+    .home-intro,
+    .values-section {
+        width: calc(100% - 32px);
+    }
+
+    .home-section {
+        padding: 22px;
+    }
+
+    .grid-galeria,
+    .grid-categorias,
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-content {
+        padding: 38px 16px 50px;
+    }
+
+    .seccion-formulario,
+    .info-ubicacion {
+        padding: 20px;
+    }
+
+    .grupo-botones {
+        flex-direction: column;
+    }
+
+    .grupo-botones button {
+        width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-main > :first-child {
+        grid-column: auto;
+    }
+
+    .volver-arriba {
+        right: 12px;
+        bottom: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* Respeta la preferencia del usuario de reducir movimiento. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}

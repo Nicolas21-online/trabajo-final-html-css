@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caciques F.C. - Escuela de Fútbol</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="icon" href="favicon.ico">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!----------HEADER--------------->
+    <!-- El mismo menú aparece en todas las páginas; aria-current marca Inicio como activo. -->
+    <header class="site-header" id="top">
+        <div class="logo">
+            <img src="assets/img/logo.webp" alt="Escudo de Caciques F.C." class="site-logo">
+            <span>Caciques F.C.</span>
+        </div>
+        <nav class="site-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html" class="activo" aria-current="page">Inicio</a></li>
+                <li><a href="views/galeria.html">Galería</a></li>
+                <li><a href="views/equipos.html">Equipos</a></li>
+                <li><a class="nav-join" href="views/Inscripcion.html">Inscripción</a></li>
+                <li><a href="views/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!----------MAIN------------->
+    <main>
+        <!-- La capa oscura de la foto se define en CSS para mantener legible el titular. -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Escuela de fútbol</p>
+                <h1 id="hero-title">Crecer, aprender y disfrutar del fútbol.</h1>
+                <p>Un club para formarse en equipo, superar nuevos retos y vivir la pasión por el fútbol dentro y fuera del campo.</p>
+                <div class="acciones">
+                    <a class="button" href="views/equipos.html">Conoce nuestros equipos&nbsp; →</a>
+                    <a class="button secondary" href="views/Inscripcion.html">Quiero inscribirme</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlights" aria-label="Lo que ofrece el club">
+            <div class="highlight"><strong>5 categorías</strong><span>De Benjamín a Juvenil</span></div>
+            <div class="highlight"><strong>Un mismo equipo</strong><span>Compañerismo y respeto</span></div>
+            <div class="highlight"><strong>Formación cercana</strong><span>Aprender a cada ritmo</span></div>
+        </section>
+
+        <!-- La historia mantiene el texto original y acompaña la lectura con una foto del equipo. -->
+        <section class="home-intro" aria-labelledby="history-heading">
+            <div class="history-copy">
+                <p class="section-label">Nuestra historia</p>
+                <h2 id="history-heading">Formamos personas y futbolistas.</h2>
+                <p>Fundado con la pasión por formar grandes personas y futbolistas, <strong>Caciques F.C.</strong> nació con el firme propósito de inculcar valores como el compañerismo, el esfuerzo y el respeto a través del deporte.</p>
+                <p>Desde sus inicios, el club trabaja para ofrecer a niños y jóvenes un espacio donde disfrutar del fútbol, aprender en equipo y crecer dentro y fuera del campo. Cada entrenamiento y cada partido son una oportunidad para compartir, superarse y representar con orgullo los colores del Caciques.</p>
+                <p>La comunidad del club está formada por jugadores, familias y entrenadores que colaboran para crear un ambiente cercano, inclusivo y comprometido con el desarrollo de cada futbolista.</p>
+            </div>
+            <figure class="history-photo">
+                <img src="assets/img/Equipo-completo.webp" alt="Jugadores de Caciques F.C. reunidos en el campo" width="800" height="597">
+                <figcaption>La comunidad de Caciques F.C., dentro y fuera del campo.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Enlaces y secciones informativas conservan las categorías y metodología del sitio. -->
+        <section class="home-section" aria-labelledby="teams-heading">
+            <p class="section-label">Formación para cada etapa</p>
+            <h2 id="teams-heading">Nuestros equipos y categorías</h2>
+            <p>Contamos con equipos desde la categoría Benjamín hasta Juvenil. En cada etapa, los entrenamientos se adaptan al desarrollo de los jugadores y combinan técnica, comprensión del juego y trabajo en equipo.</p>
+            <p>Queremos que cada futbolista encuentre un lugar para aprender, disfrutar y avanzar junto a sus compañeros, con objetivos adecuados a su categoría.</p>
+            <a class="btn-categorias" href="views/equipos.html">Conoce nuestros equipos</a>
+        </section>
+
+        <section class="home-section" aria-labelledby="method-heading">
+            <p class="section-label">Cómo trabajamos</p>
+            <h2 id="method-heading">Metodología y entrenadores</h2>
+            <p>Nuestro cuerpo técnico acompaña a los jugadores con una metodología progresiva, segura y adaptada a cada categoría. Las sesiones combinan ejercicios técnicos, actividades de coordinación y situaciones de juego que ayudan a comprender mejor el fútbol.</p>
+            <p>Además de la formación deportiva, damos importancia al respeto, la responsabilidad, el esfuerzo y la colaboración. Los entrenadores fomentan la participación y ofrecen orientación para que cada jugador pueda aprender a su ritmo.</p>
+            <p>El objetivo es disfrutar del deporte y construir una base sólida para seguir creciendo, tanto individualmente como en equipo.</p>
+        </section>
+
+        <!-- La lista semántica mantiene los cinco valores legibles y navegables. -->
+        <section class="values-section" aria-labelledby="values-heading">
+            <header class="values-heading">
+                <p class="section-label">Lo que nos une</p>
+                <h2 id="values-heading">Valores del club</h2>
+                <p>El fútbol también es una oportunidad para aprender a convivir, asumir retos y apoyar a los demás. Estos valores guían nuestro trabajo dentro y fuera del campo.</p>
+            </header>
+            <ul class="valores-grid">
+                <li class="valor-item"><strong>Respeto:</strong> tratamos con consideración a compañeros, rivales, entrenadores y árbitros.</li>
+                <li class="valor-item"><strong>Compañerismo:</strong> colaboramos, compartimos y celebramos los logros como equipo.</li>
+                <li class="valor-item"><strong>Esfuerzo:</strong> aprendemos de cada entrenamiento y damos lo mejor de nosotros.</li>
+                <li class="valor-item"><strong>Responsabilidad:</strong> cuidamos el material, cumplimos nuestros compromisos y actuamos con honestidad.</li>
+                <li class="valor-item"><strong>Inclusión:</strong> fomentamos un entorno cercano donde cada jugador pueda participar y crecer.</li>
+            </ul>
+        </section>
+    </main>
+
+    <a class="volver-arriba" href="#top" aria-label="Volver arriba">
+        <span aria-hidden="true">↑</span>
+        <span>Volver arriba</span>
+    </a>
+    <!----------FOOTER -------->
+    <!-- El pie de paginas se comparte visualmente entre páginas para localizar contacto y redes. -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-brand">
+                    <img src="assets/img/logo.webp" alt="">
+                    <span>Caciques F.C.</span>
+                </div>
+                <p>Formación, compañerismo y pasión por el fútbol.</p>
+            </div>
+            <div>
+                <h2>Contacto</h2>
+                <div class="footer-links">
+                    <a href="mailto:contacto@caciquesfc.es"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contacto@caciquesfc.es</a>
+                    <a href="tel:+34900123456"><i class="fa-solid fa-phone" aria-hidden="true"></i> +34 900 123 456</a>
+                </div>
+            </div>
+            <div>
+                <h2>Síguenos</h2>
+                <p>Las novedades del club, dentro y fuera del campo.</p>
+                <nav class="social-icons" aria-label="Redes sociales">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Caciques F.C."><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Caciques F.C."><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Caciques F.C."><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Caciques F.C. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

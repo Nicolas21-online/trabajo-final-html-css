@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos - Caciques F.C.</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+    <body>
+    <header class="site-header" id="top">
+        <div class="logo">
+            <img src="../assets/img/logo.webp" alt="Escudo de Caciques F.C." class="site-logo">
+            <span>Caciques F.C.</span>
+        </div>
+        <!-- aria-current indica cuál enlace corresponde a la página abierta. -->
+        <nav class="site-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="equipos.html" class="activo" aria-current="page">Equipos</a></li>
+                <li><a class="nav-join" href="Inscripcion.html">Inscripción</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal: categorías del club organizadas en tarjetas. -->
+    <main class="page-content">
+        <section class="seccion-equipos" aria-labelledby="teams-heading">
+            <header class="page-heading">
+                <p class="section-label">Crecer etapa a etapa</p>
+                <h1 id="teams-heading">Nuestros equipos</h1>
+                <p>En Caciques F.C. acompañamos a nuestros jugadores en cada etapa de su formación. Estas son las categorías del club, desde Benjamín hasta Juvenil:</p>
+            </header>
+            <!-- Una tarjeta por categoría, con su imagen y etapa formativa. -->
+            <div class="grid-categorias">
+                <figure class="item-galeria item-equipo">
+                    <img class="imagen-categoria" src="../assets/img/Benjamin.webp" alt="Equipo Benjamín" width="800" height="597">
+                    <figcaption>
+                        <h3>Benjamín</h3>
+                        <p>Una etapa para disfrutar del fútbol, familiarizarse con el balón y aprender los fundamentos del juego en equipo.</p>
+                    </figcaption>
+                </figure>
+                <figure class="item-galeria item-equipo">
+                    <img class="imagen-categoria" src="../assets/img/Alevin.webp" alt="Equipo Alevín" width="800" height="597">
+                    <figcaption>
+                        <h3>Alevín</h3>
+                        <p>Los jugadores afianzan su técnica, mejoran la coordinación y empiezan a reconocer distintas situaciones de juego.</p>
+                    </figcaption>
+                </figure>
+                <figure class="item-galeria item-equipo">
+                    <img class="imagen-categoria" src="../assets/img/Infantil.webp" alt="Equipo Infantil" width="800" height="597">
+                    <figcaption>
+                        <h3>Infantil</h3>
+                        <p>Se trabajan la toma de decisiones, la colaboración y la aplicación de conceptos tácticos en los entrenamientos y partidos.</p>
+                    </figcaption>
+                </figure>
+                <figure class="item-galeria item-equipo">
+                   <img class="imagen-categoria" src="../assets/img/Cadete.webp" alt="Equipo Cadete" width="800" height="597">
+                    <figcaption>
+                        <h3>Cadete</h3>
+                        <p>Una fase para desarrollar la autonomía, consolidar habilidades y asumir nuevos retos dentro del equipo.</p>
+                    </figcaption>
+                </figure>
+                <figure class="item-galeria item-equipo">
+                    <img class="imagen-categoria" src="../assets/img/Juvenil.webp" alt="Equipo Juvenil" width="800" height="597">
+                    <figcaption>
+                        <h3>Juvenil</h3>
+                        <p>Los futbolistas profundizan en el juego colectivo y continúan su desarrollo deportivo con compromiso y responsabilidad.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <a class="volver-arriba" href="#top" aria-label="Volver arriba">
+        <span aria-hidden="true">↑</span>
+        <span>Volver arriba</span>
+    </a>
+
+    <!-- El pie se mantiene igual en todas las páginas para un acceso consistente al contacto. -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div>
+                <div class="footer-brand">
+                    <img src="../assets/img/logo.webp" alt="">
+                    <span>Caciques F.C.</span>
+                </div>
+                <p>Formación, compañerismo y pasión por el fútbol.</p>
+            </div>
+            <div>
+                <h2>Contacto</h2>
+                <div class="footer-links">
+                    <a href="mailto:contacto@caciquesfc.es"><i class="fa-solid fa-envelope" aria-hidden="true"></i> contacto@caciquesfc.es</a>
+                    <a href="tel:+34900123456"><i class="fa-solid fa-phone" aria-hidden="true"></i> +34 900 123 456</a>
+                </div>
+            </div>
+            <div>
+                <h2>Síguenos</h2>
+                <p>Las novedades del club, dentro y fuera del campo.</p>
+                <nav class="social-icons" aria-label="Redes sociales">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Caciques F.C."><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Caciques F.C."><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Caciques F.C."><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Caciques F.C. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
