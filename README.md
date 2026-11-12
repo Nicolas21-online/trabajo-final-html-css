@@ -6,8 +6,8 @@ Sitio web oficial desarrollado como Trabajo Final del módulo de **HTML5 y CSS3*
 
 ## 🔗 Enlaces de Entrega
 
-* **Repositorio público en GitHub:** [https://github.com/Nicolas21-online/examen.html-css]
-* **Sitio web alojado en GitHub Pages:** [https://Nicolas21-online.github.io/examen.html-css/]
+* **Repositorio público en GitHub:** [https://github.com/Nicolas21-online/trabajo-final-html-css](https://github.com/Nicolas21-online/trabajo-final-html-css)
+* **Sitio web alojado en GitHub Pages:** [https://nicolas21-online.github.io/trabajo-final-html-css/](https://nicolas21-online.github.io/trabajo-final-html-css/)
 
 
 ---
